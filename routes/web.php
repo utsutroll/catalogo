@@ -19,5 +19,5 @@ Route::resource('/product-detail', 'ProductDetailController');
 Route::get('/products-checkout', function (){
 
     return view('products-checkout');
-    
-})->middleware('auth');
+
+});
