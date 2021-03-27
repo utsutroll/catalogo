@@ -1,11 +1,15 @@
 <?php
 
 /**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylor@laravel.com>
- */
+ * Laravel - A PHP Framework For Web Artisans **/
+
+if((isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROTO"] === 'http')){
+    // redireccionar a https
+    $redirect = 'https://'​ . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $redirect);
+    exit();
+}
 
 define('LARAVEL_START', microtime(true));
 
