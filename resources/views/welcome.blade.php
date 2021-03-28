@@ -149,7 +149,7 @@
                     <div class="product-text">
                         <span class="pro-price bg-info">
                             <div class="tooltip-ex"><strong><%= amount %>$</strong><br>
-                                <span class="tooltip-ex-text tooltip-ex-right"><%= vef %> Bs.F</span>
+                                <span class="tooltip-ex-text tooltip-ex-top"><%= vef %> Bs.F</span>
                             </div>
                                 
                         </span>
@@ -187,6 +187,11 @@
         .tooltip-ex-right {
             top: -5px;
             left: 135%;
+        }
+        .tooltip-ex-top {
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
         }
 
         .tooltip-ex-text {
