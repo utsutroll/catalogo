@@ -10,8 +10,7 @@
             <div class="card-body">
                 <form class="form-horizontal form-material" id="loginform" method="POST" action="{{ route('register') }}">
                     @csrf
-
-                    <a href="/" class="text-center db"><img src="../assets/images/logo-text-red-black.png" width="180" height="60" alt="Inicio" /></a>
+                    <a href="/" class="d-flex justify-content-center"><img src="../assets/images/logo.png" width="100" height="100" alt="Inicio" /></a>
                     <h3 class="box-title m-t-40 m-b-0">Regístrate ahora</h3><small>Crea tu cuenta y disfruta</small>
                     <div class="form-group m-t-20">
                         <div class="col-xs-12">
@@ -63,4 +62,9 @@
             </div>
         </div>
     </section>
+    @push('s_r')
+        <script>
+            $('.page-wrapper').addClass('pt-0');
+        </script>
+    @endpush
 @endsection

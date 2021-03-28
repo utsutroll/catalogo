@@ -16,7 +16,7 @@
 
                 <form class="form-horizontal form-material" id="loginform" method="POST" action="{{ route('login') }}" autocomplete="off">
                     @csrf
-                    <a href="/" class="text-center db"><img src="../assets/images/logo-text-red-black.png" width="180" height="60" alt="Inicio" /></a>
+                    <a href="/" class="d-flex justify-content-center"><img src="../assets/images/logo.png" width="100" height="100" alt="Inicio" /></a>
                     <div class="form-group m-t-40">
                         <div class="col-xs-12">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Correo Electrónico" autofocus>
@@ -97,6 +97,7 @@
                 $("#loginform").slideUp();
                 $("#recoverform").fadeIn();
             });
+            $('.page-wrapper').addClass('pt-0');
         </script>
     @endpush
 @endsection

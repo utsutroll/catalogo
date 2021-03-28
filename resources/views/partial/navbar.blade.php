@@ -1,5 +1,5 @@
 <header class="topbar">
-  <nav class="navbar navbar-expand-lg navbar-expand-lg bg-dark text-white" style="font-family:'Varela Round', sans-serif;font-size: 16px;">
+  <nav class="navbar navbar-expand-lg navbar-expand-lg bg-gray-100" style="font-family:'Varela Round', sans-serif;font-size: 16px;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="text-light ti-menu"></span>
     </button>
@@ -10,7 +10,7 @@
           <!-- ============================================================== -->
           <!-- Logo -->
           <!-- ============================================================== -->
-          <div class="navbar-header bg-dark">
+          <div class="navbar-header">
             <a class="navbar-brand" href="/">
               <!-- Logo icon -->
               <span>
@@ -38,7 +38,7 @@
       <!-- ============================================================== -->
       <!-- Items Right -->
       <!-- ============================================================== -->        
-      <ul class="navbar-nav mr-0 mt-2 mt-lg-0" style="color: #ffffff !important;" >
+      <ul class="navbar-nav mr-0 mt-2 mt-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="/">
             <span>Inicio</span>

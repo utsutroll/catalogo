@@ -90,6 +90,7 @@
     @stack('scripts_L')
     @stack('scripts_select2')
     @stack('upload_s')
+    @stack('s_r')
 </body>
 
 </html>
