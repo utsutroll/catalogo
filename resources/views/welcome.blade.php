@@ -147,11 +147,8 @@
                         <div class="pro-img-overlay"><a href="{{url('shoping-cart')}}" class="bg-success"><i class="ti-shopping-cart"></i></a> </div>
                     </div>
                     <div class="product-text">
-                        <span class="pro-price bg-info">
-                            <div class="tooltip-ex"><strong><%= amount %>$</strong><br>
-                                <span class="tooltip-ex-text tooltip-ex-top"><%= vef %> Bs.F</span>
-                            </div>
-                                
+                        <span class="pro-price bg-info" data-toggle="tooltip" title="" data-original-title="<%= vef %> Bs.F">
+                            <strong><%= amount %>$</strong> 
                         </span>
                         <a href="/product-detail/<%= id %>" class="text-dark"><h5 class="card-title m-b-0"><%= name %></h5></a>
                     </div>
