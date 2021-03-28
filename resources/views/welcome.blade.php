@@ -55,8 +55,8 @@
     <div class="row page-titles">
         <div class="col col-md-9 col-lg-9 align-self-center row">
             <div class="col-1">
-                <a data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
-                    <i class="ti-menu text-dark"></i> 
+                <a  data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
+                    <i class="ti-menu text-dark"></i>
                 </a>
             </div>
             <div class="col-11 d-none d-sm-block">
@@ -169,6 +169,11 @@
     <link rel="stylesheet" href="dist/css/filter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css" rel="stylesheet"/>
     <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
         .tooltip-ex { /* Container for our tooltip */
             position: relative;
             display: inline-block;
@@ -214,7 +219,7 @@
             border-style: solid;
             border-color: #555 transparent transparent transparent;
         }
-    </style>    
+    </style>         
     @endpush
 @push('scripts_select2') 
     <script src="dist/js/jquery-ui-1.10.2.custom.min.js" type="text/javascript"></script>
