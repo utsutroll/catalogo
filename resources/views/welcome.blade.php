@@ -55,9 +55,8 @@
     <div class="row page-titles">
         <div class="col col-md-9 col-lg-9 align-self-center row">
             <div class="col-1">
-                <a class="tooltip-ex" data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
-                    <i class="ti-menu text-dark"></i>
-                    <span class="tooltip-ex-text tooltip-ex-right">Filtrar por Categorías</span>
+                <a data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
+                    <i class="ti-menu text-dark"></i> 
                 </a>
             </div>
             <div class="col-11 d-none d-sm-block">
@@ -147,8 +146,11 @@
                         <div class="pro-img-overlay"><a href="{{url('shoping-cart')}}" class="bg-success"><i class="ti-shopping-cart"></i></a> </div>
                     </div>
                     <div class="product-text">
-                        <span class="pro-price bg-info" data-toggle="tooltip" title="" data-original-title="<%= vef %> Bs.F">
-                            <strong><%= amount %>$</strong> 
+                        <span class="pro-price bg-info">
+                            <div class="tooltip-ex"><strong><%= amount %>$</strong><br>
+                                <span class="tooltip-ex-text tooltip-ex-top"><%= vef %> Bs.F</span>
+                            </div>
+                                
                         </span>
                         <a href="/product-detail/<%= id %>" class="text-dark"><h5 class="card-title m-b-0"><%= name %></h5></a>
                     </div>
@@ -167,10 +169,6 @@
     <link rel="stylesheet" href="dist/css/filter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css" rel="stylesheet"/>
     <style>
-        .carousel-inner img {
-            width: 100%;
-            height: 100%;
-        }
         .tooltip-ex { /* Container for our tooltip */
             position: relative;
             display: inline-block;
@@ -181,12 +179,8 @@
             float: center;
         }
 
-        .tooltip-ex-right {
-            top: -5px;
-            left: 135%;
-        }
         .tooltip-ex-top {
-            bottom: 100%;
+            bottom: 180%;
             left: 50%;
             margin-left: -60px;
         }
@@ -207,17 +201,18 @@
 
         .tooltip-ex:hover .tooltip-ex-text { /* Makes tooltip visible when hovered on */
             visibility: visible;
-            opacity: 2;
+            opacity: 1;
         }
+
         .tooltip-ex .tooltip-ex-text::after {
             content: " ";
             position: absolute;
-            top: 50%;
-            right: 100%; /* This will position the arrow on the left of the tooltip */
-            margin-top: -10px;
-            border-width: 10px;
+            top: 100%; /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
             border-style: solid;
-            border-color: transparent #555 transparent transparent;
+            border-color: #555 transparent transparent transparent;
         }
     </style>    
     @endpush
