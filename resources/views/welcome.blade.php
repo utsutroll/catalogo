@@ -55,7 +55,7 @@
     <div class="row page-titles">
         <div class="col col-md-4 col-lg-4 align-self-center">
             <a  data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
-                <i class="ti-menu text-dark"> Filtrar</i>
+                <i class="ti-menu text-dark"> Filtrar por Categoría</i>
             </a>
         </div>
         <div class="col col-md-4 col-lg-4 form-material">
@@ -65,8 +65,7 @@
         <div class="col col-md-4 col-lg-4 align-self-center text-right d-none d-sm-block">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Inicio</a></li>
-                    <li class="breadcrumb-item active">Productos</li>
+                    <li class="breadcrumb-item active"><a href="#">Inicio</a></li>
                 </ol>
             </div>
         </div>

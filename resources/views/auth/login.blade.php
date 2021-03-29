@@ -56,7 +56,7 @@
 
                     <div class="form-group m-b-0">
                         <div class="col-sm-12 text-center">
-                            ¿No tienes una cuenta? <a href="{{ route('register') }}" class="text-primary m-l-5"><b>Regístrate</b></a>
+                            ¿No tienes una cuenta? <a href="{{ route('register') }}" class="text-danger m-l-5"><b>Regístrate</b></a>
                         </div>
                     </div>
                 </form>
