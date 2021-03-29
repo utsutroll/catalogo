@@ -1,5 +1,5 @@
 <header class="topbar">
-  <nav class="navbar navbar-expand-lg navbar-expand-lg bg-gray-100" style="font-family:'Varela Round', sans-serif;font-size: 16px;">
+  <nav class="navbar navbar-expand-lg navbar-expand-lg bg-light" style="font-family: 'Roboto', sans-serif;font-size: 14px;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="text-light ti-menu"></span>
     </button>
@@ -15,7 +15,7 @@
               <!-- Logo icon -->
               <span>
                 <!-- dark Logo text -->
-                <img src="{{url('assets/images/logo-text.png')}}" width="180" height="60" alt="homepage" class="dark-logo" />
+                <img src="{{url('assets/images/logo-text-red-black.png')}}" width="100" height="40" alt="homepage" class="dark-logo" />
               </span> 
             </a>
           </div>
@@ -42,16 +42,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/">
             <span>Inicio</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="how-to-buy">
-            <span>Cómo Comprar</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about-us">
-            <span>Acerca de nosotros</span>
           </a>
         </li>
         <li class="nav-item">
@@ -86,11 +76,9 @@
             </form>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/shopping-cart"><i class="fa fa-shopping-cart fa-2x"></i></a>
-        </li>
         @endguest
       </ul>
+      <a class="nav-link" href="/shopping-cart"><i class="fa fa-shopping-cart fa-2x"></i></a>
     </div>
   </nav>
 </header>  

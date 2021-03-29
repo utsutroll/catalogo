@@ -25,7 +25,25 @@
   @stack('css_select2')
   @stack('upload_css')
 
-  
+  <style>
+    .list-f{
+      list-style: none;
+      padding-left: 0;
+      font-size: .7rem;
+      color: #fff;
+    }
+    .ir-arriba{
+      display:none;
+      background-repeat:no-repeat;
+      font-size:20px;
+      color:black;
+      cursor:pointer;
+      position:fixed;
+      bottom:10px;
+      right:10px;
+      z-index:2;
+    }
+  </style>
 
 </head>
 
@@ -60,6 +78,12 @@
       @yield('content')
 
     </div>
+    <a class="ir-arriba"  javascript:void(0) title="Volver arriba">
+      <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
     @if(!\Request::is('login') && !\Request::is('register'))
       @include('partial.footer')
     @endif
@@ -84,13 +108,22 @@
     <script type="text/javascript">
         $(function() {
             $(".preloader").fadeOut();
+            irArriba();
         });
 
+        function irArriba(){
+          $('.ir-arriba').click(function(){ $('body,html').animate({ scrollTop:'0px' },1000); });
+          $(window).scroll(function(){
+            if($(this).scrollTop() > 0){ $('.ir-arriba').slideDown(600); }else{ $('.ir-arriba').slideUp(600); }
+          });
+          $('.ir-abajo').click(function(){ $('body,html').animate({ scrollTop:'1000px' },1000); });
+        }
     </script>
     @stack('scripts_L')
     @stack('scripts_select2')
     @stack('upload_s')
     @stack('s_r')
+
 </body>
 
 </html>

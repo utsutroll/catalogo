@@ -53,18 +53,16 @@
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <div class="row page-titles">
-        <div class="col col-md-9 col-lg-9 align-self-center row">
-            <div class="col-1">
-                <a  data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
-                    <i class="ti-menu text-dark"></i>
-                </a>
-            </div>
-            <div class="col-11 d-none d-sm-block">
-                <h4 class="text-themecolor">Productos</h4>
-            </div>
+        <div class="col col-md-4 col-lg-4 align-self-center">
+            <a  data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
+                <i class="ti-menu text-dark"> Filtrar</i>
+            </a>
+        </div>
+        <div class="col col-md-4 col-lg-4 form-material">
+            <input type="text" id="search_box" class="form-control" placeholder="Buscar &hellip;" />
         </div>
                     
-        <div class="col col-md-3 col-lg-3 align-self-center text-right">
+        <div class="col col-md-4 col-lg-4 align-self-center text-right d-none d-sm-block">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Inicio</a></li>
@@ -83,10 +81,6 @@
         <div class="sidebar_bar collapse col-md-4 col-lg-3" id="navbarCat">
             <div class="card">
                 <div class="card-body">  
-                    <div class="sidebar_list">
-                        <input type="text" id="search_box" class="form-control" placeholder="Buscar &hellip;" />
-                    </div>
-                    <hr/>
                     <div class="list-group">
                         <h3>Categorías</h3>
                         <ul class="pl-0" id="status" style="list-style:none;">
@@ -139,14 +133,14 @@
     <script id="template" type="text/html">
         <!-- Column -->
         <div class="col-lg-3 col-md-6">
-            <div class="card">
+            <div class="card shadow-sm p-3">
                 <div class="card-body">
                     <div class="product-img">
                         <img src="../<%= img %>">
                         <div class="pro-img-overlay"><a href="{{url('shoping-cart')}}" class="bg-success"><i class="ti-shopping-cart"></i></a> </div>
                     </div>
                     <div class="product-text">
-                        <span class="pro-price bg-info">
+                        <span class="pro-price bg-dark">
                             <div class="tooltip-ex"><strong><%= amount %>$</strong><br>
                                 <span class="tooltip-ex-text tooltip-ex-top"><%= vef %> Bs.F</span>
                             </div>
@@ -229,34 +223,34 @@
     <script src="../assets/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>  
     <script>
 
-    $('.select2').select2();    
-    
+        $('.select2').select2();    
+        
 
-    FilterJS(services, "#service_list", {
-        template: '#template',
-        criterias:[
-        {field: 'amount', ele: '#price_filter', type: 'range'},
-        {field: 'status', ele: '#status :checkbox'}
-        ],
+        FilterJS(services, "#service_list", {
+            template: '#template',
+            criterias:[
+            {field: 'amount', ele: '#price_filter', type: 'range'},
+            {field: 'status', ele: '#status :checkbox'}
+            ],
 
-        search: { ele: '#search_box' }  
-    });  
-    $('#status :checkbox').prop('checked', true);
-    $('#all_status').on('click', function(){
-        $('#status :checkbox').prop('checked', $(this).is(':checked'));
-    });  
+            search: { ele: '#search_box' }  
+        });  
+        $('#status :checkbox').prop('checked', true);
+        $('#all_status').on('click', function(){
+            $('#status :checkbox').prop('checked', $(this).is(':checked'));
+        });  
 
-    $('#navbarCat').on('show.bs.collapse', function () {
-        $('#product')
-        .removeClass('col-12')
-        .addClass('col-md-8 col-lg-9')
-    })
+        $('#navbarCat').on('show.bs.collapse', function () {
+            $('#product')
+            .removeClass('col-12')
+            .addClass('col-md-8 col-lg-9')
+        })
 
-    $('#navbarCat').on('hidden.bs.collapse', function () {
-        $('#product')
-        .removeClass('col-md-8 col-lg-9')
-        .addClass('col-12')
-    })
+        $('#navbarCat').on('hidden.bs.collapse', function () {
+            $('#product')
+            .removeClass('col-md-8 col-lg-9')
+            .addClass('col-12')
+        })
     </script>    
 @endpush        
 @endsection
