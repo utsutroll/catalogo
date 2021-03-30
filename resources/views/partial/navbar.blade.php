@@ -11,11 +11,11 @@
           <!-- Logo -->
           <!-- ============================================================== -->
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/" title="Inicio">
               <!-- Logo icon -->
               <span>
                 <!-- dark Logo text -->
-                <img src="{{url('assets/images/logo-text-red-black.png')}}" width="100" height="40" alt="homepage" class="dark-logo" />
+                <img src="{{url('assets/images/logo-text-red-black.png')}}" width="100" height="40" alt="La Mega Tienda Turén" class="dark-logo" />
               </span> 
             </a>
           </div>
@@ -40,26 +40,32 @@
       <!-- ============================================================== -->        
       <ul class="navbar-nav mr-0 mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/">
-            <span>Inicio</span>
+          <a class="nav-link" href="/" title="Lista de Deseos">
+            <i class="fa fa-heart fa-2x"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">
-            <span>Contáctanos</span>
+          <a class="nav-link" href="/shopping-cart" title="Carrito de Compras">
+            <i class="fa fa-shopping-cart fa-2x"></i>
           </a>
         </li>
+       
         <!-- Authentication Links -->
         @guest
         @if (Route::has('login'))
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+          <a id="navbarDropdownUser" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre title="Iniciar Sesión">
+            <i class="fa fa-user-circle fa-2x"></i>   
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+          </div>  
         </li>
         @endif
         @else
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            </i> {{ Auth::user()->name }} <i class="caret"></i>
+            {{ Auth::user()->name }} <i class="caret"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/my-orders">
@@ -78,7 +84,6 @@
         </li>
         @endguest
       </ul>
-      <a class="nav-link" href="/shopping-cart"><i class="fa fa-shopping-cart fa-2x"></i></a>
     </div>
   </nav>
 </header>  

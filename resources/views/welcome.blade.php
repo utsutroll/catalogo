@@ -52,23 +52,55 @@
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
-    <div class="row page-titles">
-        <div class="col col-md-4 col-lg-4 align-self-center">
-            <a  data-toggle="collapse" href="#navbarCat" role="button" aria-expanded="false" aria-controls="navbarCat">
-                <i class="ti-menu text-dark"> Filtrar por Categoría</i>
-            </a>
-        </div>
-        <div class="col col-md-4 col-lg-4 form-material">
-            <input type="text" id="search_box" class="form-control" placeholder="Buscar &hellip;" />
-        </div>
-                    
-        <div class="col col-md-4 col-lg-4 align-self-center text-right d-none d-sm-block">
-            <div class="d-flex justify-content-end align-items-center">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="#">Inicio</a></li>
-                </ol>
+    <div class="page-titles d-flex justify-content-center">
+        <div class="form-material">
+            <div class="input-group mb3">
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-white dropdown-toggle mr-1 border-secondary border-top-0 border-left-0 border-right-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ti-filter"></i> Filtrar por
+                    </button>
+                    <div class="dropdown-menu" id="status">
+                        <div class="dropdown-item disabled">Categorías</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item checkbox">
+                            <label><input type="checkbox" value="all" id="all_status"> Todos</label>
+                        </div>
+                            
+                            @foreach ($categorias as $ca)
+                            
+                                <div class="dropdown-item checkbox">
+                                    <label><input type="checkbox" value="{{$ca->categoria}}"  > {{$ca->categoria}}</label>
+                                </div>
+                            
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <input type="text" id="search_box" class="form-control" placeholder="Buscar &hellip;" />
+            </div>                
+        </div>                   
+    </div>
+    <div class="row">
+    <div class="col-12" id="carrusel">
+        <a href="#" class="left-arrow"><i class="fa fa-angle-left fa-3x"></i></a>
+        <a href="#" class="right-arrow"><i class="fa fa-angle-right fa-3x"></i></a>
+        <h4>Productos en Oferta</h4>
+        <div class="carrusel">
+            {{$n=0}}
+            @foreach ($productos as $p)
+            <div class="products" id="product_{{$n++}}" style="font-family: 'Roboto', sans-serif;">
+                <div class="img-sli">
+                    <img src="../{{$p->img}}" width="70%" />
+                </div>
+                
+                <div class="nombre">
+                    <a href="/product-detail/{{$p->idproducto}}">{{$p->nombre}}</a>
+                </div>
+                <span class="badge badge-pill badge-dark">{{$p->precio}} $</span> 
             </div>
+            @endforeach
         </div>
+    </div>
     </div>
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
@@ -76,31 +108,8 @@
     <!-- ============================================================== -->
     <!-- Filtro -->
     <!-- ============================================================== -->
-    <div class="row">
-        <div class="sidebar_bar collapse col-md-4 col-lg-3" id="navbarCat">
-            <div class="card">
-                <div class="card-body">  
-                    <div class="list-group">
-                        <h3>Categorías</h3>
-                        <ul class="pl-0" id="status" style="list-style:none;">
-                            <li>
-                                <div class="list-group-item checkbox">
-                                    <label><input type="checkbox" value="all" id="all_status"> Todos</label>
-                                </div>
-                            </li>
-                            @foreach ($categorias as $ca)
-                            <li>
-                                <div class="list-group-item checkbox">
-                                    <label><input type="checkbox" value="{{$ca->categoria}}"  > {{$ca->categoria}}</label>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12" id="product">
+    
+        <div id="product">
             <div class="featured_services_find">
                 <div class="featured_list_find row" id="service_list"></div>
             </div>
@@ -127,15 +136,14 @@
             {{$productos->links()}}
         </div> 
 
-    </div>
 
     <script id="template" type="text/html">
         <!-- Column -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-3">
             <div class="card shadow-sm p-3">
                 <div class="card-body">
                     <div class="product-img">
-                        <img src="../<%= img %>">
+                        <img class="img-fluid" src="../<%= img %>">
                         <div class="pro-img-overlay"><a href="{{url('shoping-cart')}}" class="bg-success"><i class="ti-shopping-cart"></i></a> </div>
                     </div>
                     <div class="product-text">
@@ -150,6 +158,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Column -->     
     </script>
     <!-- ============================================================== -->
@@ -161,12 +170,20 @@
     <link href="../assets/node_modules/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/filter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="dist/css/carrusel.css">
     <style>
         .carousel-inner img {
             width: 100%;
             height: 100%;
         }
-
+        .nombre{
+            padding: 10px 10px 5px;
+            position: relative;
+        }
+        .cart-sli{
+            padding: 15px;
+            border-radius: 25px;
+        }
         .tooltip-ex { /* Container for our tooltip */
             position: relative;
             display: inline-block;
@@ -219,7 +236,8 @@
     <script src="../assets/node_modules/filter/dist/filter.js" type="text/javascript"></script>   
     <!-- Select2 -->
     <script src="../assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-    <script src="../assets/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>  
+    <script src="../assets/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script> 
+    <script src="dist/js/carrusel.js" type="text/javascript"></script> 
     <script>
 
         $('.select2').select2();    
@@ -238,18 +256,6 @@
         $('#all_status').on('click', function(){
             $('#status :checkbox').prop('checked', $(this).is(':checked'));
         });  
-
-        $('#navbarCat').on('show.bs.collapse', function () {
-            $('#product')
-            .removeClass('col-12')
-            .addClass('col-md-8 col-lg-9')
-        })
-
-        $('#navbarCat').on('hidden.bs.collapse', function () {
-            $('#product')
-            .removeClass('col-md-8 col-lg-9')
-            .addClass('col-12')
-        })
     </script>    
 @endpush        
 @endsection
