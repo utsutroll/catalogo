@@ -96,7 +96,7 @@
                 <div class="nombre">
                     <a href="/product-detail/{{$p->idproducto}}">{{$p->nombre}}</a>
                 </div>
-                <span class="badge badge-pill badge-dark">{{$p->precio}} $</span> 
+                <span class="badge badge-pill badge-s">{{$p->precio}} $</span> 
             </div>
             @endforeach
         </div>
@@ -139,7 +139,7 @@
 
     <script id="template" type="text/html">
         <!-- Column -->
-        <div class="col-3">
+        <div class="col col-md-6 col-lg-3">
             <div class="card shadow-sm p-3">
                 <div class="card-body">
                     <div class="product-img">
