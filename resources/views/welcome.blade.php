@@ -96,7 +96,7 @@
                 <div class="nombre">
                     <a href="/product-detail/{{$p->idproducto}}">{{$p->nombre}}</a>
                 </div>
-                <span class="badge badge-pill badge-s">{{$p->precio}} $</span> 
+                <span class="badge badge-pill badge-dark">{{$p->precio}} $</span> 
             </div>
             @endforeach
         </div>
