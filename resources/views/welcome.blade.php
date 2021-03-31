@@ -12,22 +12,22 @@
           <div class="carousel-item active">
             <img src="../assets/images/slider.jpg" alt="Los Angeles" width="1100" height="500">
             <div class="carousel-caption">
-              <h3 style="font-size:2vw;">Los Angeles</h3>
-              <p class="m-auto" style="font-size:1vw;">We had such a great time in LA!</p>
+              <h3 style="font-size:2vw;">Mega Promos</h3>
+              <p class="m-auto" style="font-size:1vw;">Visítanos y encuentra los mejore productos!</p>
             </div>   
           </div>
           <div class="carousel-item">
-            <img src="../assets/images/slider.jpg" alt="Chicago" width="1100" height="500">
+            <img src="../assets/images/slider1.jpg" alt="Chicago" width="1100" height="500">
             <div class="carousel-caption">
-              <h3 style="font-size:2vw;">Chicago</h3>
-              <p class="m-auto" style="font-size:1vw;">Thank you, Chicago!</p>
+              <h3 style="font-size:2vw;">Mega Ofertas</h3>
+              <p class="m-auto" style="font-size:1vw;">Tenemos los mejores descuentos en tus productos preferidos!</p>
             </div>   
           </div>
           <div class="carousel-item">
-            <img src="../assets/images/slider.jpg" alt="New York" width="1100" height="500">
+            <img src="../assets/images/slider2.jpg" alt="New York" width="1100" height="500">
             <div class="carousel-caption">
-              <h3 style="font-size:2vw;">New York</h3>
-              <p class="m-auto" style="font-size:1vw;">We love the Big Apple!</p>
+              <h3 style="font-size:2vw;">Mega Compras</h3>
+              <p class="m-auto" style="font-size:1vw;">Encuentra los mejores productos!</p>
             </div>   
           </div>
         </div>
